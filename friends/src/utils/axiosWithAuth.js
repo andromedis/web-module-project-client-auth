@@ -8,5 +8,5 @@ export default function axiosWithAuth() {
         headers: {
             authorization: token,
         },
-    })
+    });
 }
