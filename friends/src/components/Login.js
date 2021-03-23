@@ -9,12 +9,15 @@ const defaultFormValues = {
     password: '',
 }
 
-function Login() {
+export default function Login() {
+    // State
     const [credentials, setCredentials] = useState(defaultFormValues);
     const [isLoading, setIsLoading] = useState(false);
 
+    // History object
     const history = useHistory();
 
+    // Event handlers
     const handleChange = evt => {
         setCredentials({
             ...credentials,
@@ -69,5 +72,3 @@ function Login() {
         </div>
     )
 }
-
-export default Login;
