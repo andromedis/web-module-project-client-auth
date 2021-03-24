@@ -46,13 +46,29 @@ export default function FriendsList(props) {
             })
     }
 
+    const deleteFriend = id => {
+        axiosWithAuth()
+            .delete(`http://localhost:5000/api/friends/${id}`)
+            .then(res => {
+                console.log(res);
+                setFriends(res.data);
+            })
+            .catch(err => {
+                console.error(err.response);
+            })
+    }
+
     return (
         <div className='friends-list-container'>
             <h1>Friends</h1>
             <FriendForm addFriend={addFriend}/>
             {
                 friends.map(friend => (
-                    <Friend key={friend.id} friend={friend} />
+                    <Friend 
+                        key={friend.id} 
+                        friend={friend} 
+                        deleteFriend={deleteFriend}
+                    />
                 ))
             }
         </div>

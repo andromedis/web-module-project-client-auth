@@ -1,12 +1,14 @@
 import React from 'react';
 
 export default function Friend(props) {
-    const { name, age, email } = props.friend;
+    const { friend, editFriend, deleteFriend } = props;
     return (
         <div className='friend'>
-            <h3>{name}</h3>
-            <p>Age: {age}</p>
-            <p>Email: {email}</p>
+            <h3>{friend.name}</h3>
+            <p>Age: {friend.age}</p>
+            <p>Email: {friend.email}</p>
+            {/* <button >Edit</button> */}
+            <button onClick={() => deleteFriend(friend.id)} >Delete</button>
         </div>
     )
 }
