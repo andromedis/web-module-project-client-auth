@@ -47,7 +47,7 @@ export default function Login() {
             <h1>Log In</h1>
             <form onSubmit={login}>
 
-                <label htmlFor='username'>Username</label>
+                <label htmlFor='username' >Username</label>
                 <input 
                     type='text'
                     name='username'
@@ -56,7 +56,7 @@ export default function Login() {
                     onChange={handleChange}
                 />
 
-                <label htmlFor='password'>Password</label>
+                <label htmlFor='password' >Password</label>
                 <input 
                     type='password'
                     name='password'
