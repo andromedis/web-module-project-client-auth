@@ -1,18 +1,23 @@
+// Library imports
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
 
+// Utils
 import axiosWithAuth from '../utils/axiosWithAuth';
 
+// Components
 import Friend from './Friend';
 import FriendForm from './FriendForm';
 
 export default function FriendsList(props) {
+    // State
     const [friends, setFriends] = useState([]);
 
+    // Side effect for initial data fetch
     useEffect(() => {
         getFriends();
     }, [])
 
+    // Api request functions
     const getFriends = () => {
         axiosWithAuth()
             .get('/api/friends')

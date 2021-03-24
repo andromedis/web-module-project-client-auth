@@ -28,6 +28,7 @@ export default function FriendForm(props) {
             email: formValues.email,
         }
         props.addFriend(friend);
+        clearForm();
     }
 
     const clearForm = () => {

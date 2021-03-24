@@ -15,7 +15,7 @@ export default function Login() {
     const [isLoading, setIsLoading] = useState(false);
 
     // History object
-    const history = useHistory();
+    const { push } = useHistory();
 
     // Event handlers
     const handleChange = evt => {
@@ -31,14 +31,14 @@ export default function Login() {
 
         axios.post('http://localhost:5000/api/login/', credentials)
             .then(res => {
-                setIsLoading(false);
                 console.log(res);
+                setIsLoading(false);
                 localStorage.setItem('token', res.data.payload);
-                history.push('/friends-list');
+                push('/friends-list');
             })
             .catch(err => {
-                setIsLoading(false);
                 console.error(err.response);
+                setIsLoading(false);
             })
     }
 
